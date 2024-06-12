@@ -22,6 +22,7 @@ When('I click the Sign Up button', () => {
 });
   
 Then('I should see the alert with the message {string}', (expectedMessage) => {
+    cy.wait(1000);
     cy.on('window:alert', (alertText) => {
       expect(alertText).to.equal(expectedMessage);
     });

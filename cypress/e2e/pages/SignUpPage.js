@@ -19,12 +19,12 @@ class SignUpPage {
     }
 
     typeUsername(username) {
-        username && this.elements.usernameInput().type(username);
+        username && this.elements.usernameInput().type(username, { delay: 0 });
         return this;
     }
-
+    
     typePassword(password) {
-        password && this.elements.passwordInput().type(password);
+        password && this.elements.passwordInput().type(password, { delay: 0 });
         return this;
     }
 
