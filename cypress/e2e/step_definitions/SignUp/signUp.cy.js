@@ -1,4 +1,5 @@
 import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
+import { generateRandomUsername } from '../../../support/utils';
 import SignUpPage from '../../pages/SignUpPage';
 
 Given('I visit the home page', () => {
@@ -11,6 +12,12 @@ Given('I click the Sign up nav link', () => {
 
 When('I see the modal is open', () => {
     SignUpPage.verifyModalIsOpen();
+});
+
+When('I fill the form with a random username and password {string}', (password) => {
+    const username = generateRandomUsername();
+    cy.wrap(username).as('randomUsername'); 
+    SignUpPage.fillSignUpForm(username, password);
 });
 
 When('I fill the form with username {string} and password {string}', (username, password) => {

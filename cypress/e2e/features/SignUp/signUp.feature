@@ -6,7 +6,7 @@ Feature: Sign Up
     When I see the modal is open
 
   Scenario: Create a new user 
-    And I fill the form with username "m9tp*" and password "password"
+    And I fill the form with a random username and password "password"
     And I click the Sign Up button 
     Then I should see the alert with the message "Sign up successful."
     And I click the OK button
