@@ -29,13 +29,8 @@ Then('I should see the alert with the message {string}', (expectedMessage) => {
 });
 
 When('I click the OK button', () => {
-    // Simulate clicking the OK button on the alert window
     cy.on('window:alert', () => true);
 });
-
-// When('I see the modal is closed', () => {
-//     SignUpPage.verifyModalIsClosed();
-// });
   
 Then('I should see the homepage', () => {
     cy.url().should('include', '/index.html');

@@ -5,12 +5,12 @@ Feature: Sign Up
     And I click the Sign up nav link
     When I see the modal is open
 
-#   Scenario: Create a new user 
-#     And I fill the form with username "m9tp*" and password "password"
-#     And I click the Sign Up button 
-#     Then I should see the alert with the message "Sign up successful."
-#     And I click the OK button
-#     And I should see the homepage
+  Scenario: Create a new user 
+    And I fill the form with username "m9tp*" and password "password"
+    And I click the Sign Up button 
+    Then I should see the alert with the message "Sign up successful."
+    And I click the OK button
+    And I should see the homepage
 
   Scenario Outline: Create a new user with "<scenario>"
     And I fill the form with username "<username>" and password "<password>"
