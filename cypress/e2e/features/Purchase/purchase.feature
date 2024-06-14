@@ -16,3 +16,17 @@ Feature: Purchase
     Then I should see the confirmation message
     And I return to the cart
     And my cart should be empty 
+
+
+   Scenario: Complete purchase process with only required params
+    When I add the following items to the cart:
+      | category | item          |
+      | Laptops  | Sony vaio i5  |
+    And I go to the cart
+    Then I should see the total price as "790"
+    When I place the order with the following details:
+      | name      | country | city     | creditCard | month | year |
+      | Mary Doe  |         |          | 1234567890 |       |      |
+    Then I should see the confirmation message
+    And I return to the cart
+    And my cart should be empty   

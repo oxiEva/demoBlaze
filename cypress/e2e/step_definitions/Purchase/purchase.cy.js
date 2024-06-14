@@ -13,7 +13,7 @@ When('I add the following items to the cart:', (dataTable) => {
     InventoryPage.selectCategory(row.category);
     InventoryPage.selectItem(row.item);
     ProductPage.getProductPrice().then((price) => {
-      totalPrice += parseFloat(price); // Accumulate the total price
+      totalPrice += parseFloat(price); 
     });
     ProductPage.addItemToCart();
     InventoryPage.visit();
@@ -25,7 +25,7 @@ When('I go to the cart', () => {
 });
 
 Then('I should see the total price as {string}', (expectedTotal) => {
-  expect(totalPrice.toString()).to.equal(expectedTotal); // Compare accumulated price with expected total     
+  expect(totalPrice.toString()).to.equal(expectedTotal); 
 });
 
 When('I place the order with the following details:', (dataTable) => {

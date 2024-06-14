@@ -1,7 +1,8 @@
 class LoginPage {
     elements = {
-        loginNavLink: () => cy.get('#login2'),
+        loginNavLink: () => cy.get('nav').contains('Log in'),
         loginModal: () => cy.get('#logInModal'),
+        loggedInUser: (username) => cy.get('nav').contains(username),
         usernameInput: () => cy.get('#loginusername'),
         passwordInput: () => cy.get('#loginpassword'),
         loginButton: () => cy.get('button').contains('Log in'),
@@ -16,9 +17,9 @@ class LoginPage {
       clickLoginNavLink() {
         this.elements.loginNavLink().click();
       }
-    
+
       verifyModalIsOpen() {
-        this.elements.loginModal().should('be.visible');
+        cy.get('#logInModal').should('be.visible');
       }
     
       typeUsername(username) {
@@ -39,12 +40,12 @@ class LoginPage {
       }
     
       verifyUserIsLoggedIn(username) {
-        this.elements.userNavLink().should('contain.text', username);
+        this.elements.loggedInUser(username).should('be.visible');
       }
-    
+
       logout() {
-        this.elements.logoutButton().click();
-      }
+        cy.get('nav').contains('Log out').click();
+    }
 }
 
 export default new LoginPage();

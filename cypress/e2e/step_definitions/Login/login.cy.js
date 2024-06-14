@@ -22,8 +22,7 @@ When('I click the Login button', () => {
 });
 
 Then('I should see the user logged in as {string}', (username) => {
-    cy.wait(1000);
-    LoginPage.verifyUserIsLoggedIn(username);
+    LoginPage.elements.loggedInUser(username).should('be.visible');
 });
 
 Then('I should see the alert login with the message {string}', (expectedMessage) => {
