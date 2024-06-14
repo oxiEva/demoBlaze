@@ -1,4 +1,5 @@
-Feature: Category
+@regression @inventory
+Feature: Inventory
 
   Background:
     Given I am on the inventory page

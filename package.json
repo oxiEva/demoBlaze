@@ -1,10 +1,12 @@
 {
-  "name": "blaze",
+  "name": "blaze-demo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Project using Cypress and Cucumber",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "e2e:smoke": "cypress run --env TAGS='@smoke'",
+    "e2e:regression": "cypress run --env TAGS='@regression'"
   },
   "author": "",
   "license": "ISC",

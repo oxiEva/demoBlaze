@@ -1,3 +1,4 @@
+@smoke @signUp
 Feature: Sign Up
 
  Background:
