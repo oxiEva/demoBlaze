@@ -1,0 +1,28 @@
+name: On-Demand Regression Tests
+
+on: [workflow_dispatch]
+
+jobs:
+  run-cypress-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.5
+      - name: Install project dependencies
+        run: npm install
+      - name: Run cypress tests
+        run: npx cypress run
+
+      - name: Run regression tests
+        run: npx cypress run --env TAGS="@regression"
+
+      - name: Generate Allure report
+        if: always()
+        run: npx allure generate --clean
+  
+      - name: Upload Allure results
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: allure-results
+          path: allure-report/  
