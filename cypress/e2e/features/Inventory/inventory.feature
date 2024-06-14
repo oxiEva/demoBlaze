@@ -1,4 +1,4 @@
-@regression @inventory
+@inventory
 Feature: Inventory
 
   Background:

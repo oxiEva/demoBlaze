@@ -30,12 +30,12 @@ class CartPage {
   }
 
   fillOrderDetails(name, country, city, creditCard, month, year) {
-    if (name) this.elements.nameInput().type(name);
-    if (country) this.elements.countryInput().type(country);
-    if (city) this.elements.cityInput().type(city);
-    if (creditCard) this.elements.creditCardInput().type(creditCard);
-    if (month) this.elements.monthInput().type(month);
-    if (year) this.elements.yearInput().type(year);
+    this.elements.nameInput().type(name);
+    this.elements.countryInput().type(country);
+    this.elements.cityInput().type(city);
+    this.elements.creditCardInput().type(creditCard);
+    this.elements.monthInput().type(month);
+    this.elements.yearInput().type(year);
   }
 
   submitOrder() {
