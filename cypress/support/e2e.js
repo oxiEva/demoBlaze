@@ -20,3 +20,5 @@ import './commands'
 // require('./commands')
 
 import 'allure-cypress';
+
+import 'cypress-mochawesome-reporter/register';
